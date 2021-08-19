@@ -5,12 +5,17 @@ import BackgroundImg from "../../assets/pictures/background_header_field.jpg";
 import { Logo } from "../../components/logo";
 import { Marginer } from "../../components/marginer";
 import { Button } from "../../components/button";
+import { DownArrow } from "../../components/downArrow";
+import { Navbar } from "../../components/navbar"
+import { Element, scroller } from "react-scroll";
+
 
 const TopContainer = styled.div`
   width: 100%;
   height: 100vh;
   padding: 0;
   background-image:url(${BackgroundImg});
+  position=relative;
 `;
 
 const BackgroundFilter = styled.div`
@@ -24,7 +29,7 @@ const BackgroundFilter = styled.div`
 
 const SloganText = styled.h1`
   font-family: Radley;
-  font-size: 96px;
+  font-size: 64px;
   font-weight: 500;
   color: #FFFFFF;
   margin: 0;
@@ -36,22 +41,40 @@ const ButtonContainer = styled.div`
   flex-direction: row;
 `;
 
+const DownArrowContainer = styled.div`
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+`;
+
 export function TopSection(props) {
+
+  const scrollToNextSection= () => {
+    scroller.scrollTo("servicesSection", { smooth: true, duration: 1500 })
+  }
+
   return(
-  <TopContainer>
-    <BackgroundFilter>
-      <Marginer direction="vertical" margin="12em" />
-        <Logo />
-      <Marginer direction="vertical" margin="4em" />
-        <SloganText>NFTs Just Met</SloganText>
-        <SloganText>Fantasy Sports</SloganText>
-      <Marginer direction="vertical" margin="4em" />
-        <ButtonContainer>
-          <Button display="inline-block" >Mint Boosts</Button>
-          <Marginer direction="horizontal" margin="8em" />
-          <Button flex-direction="row" > Play Now </Button>
-        </ButtonContainer>
-    </BackgroundFilter>
-  </TopContainer>
+  <Element name="topSection">
+    <TopContainer>
+      <BackgroundFilter>
+      <Navbar />
+        <Marginer direction="vertical" margin="6em" />
+          <Logo />
+        <Marginer direction="vertical" margin="2em" />
+          <SloganText>NFTs Just Met</SloganText>
+          <SloganText>Fantasy Sports</SloganText>
+        <Marginer direction="vertical" margin="4em" />
+          <ButtonContainer>
+            <Button display="inline-block" >Mint Boosts</Button>
+            <Marginer direction="horizontal" margin="8em" />
+            <Button flex-direction="row" > &nbsp; Play Now &nbsp; </Button>
+          </ButtonContainer>
+          <DownArrowContainer onClick={scrollToNextSection}>
+            <DownArrow />
+          </DownArrowContainer>
+      </BackgroundFilter>
+    </TopContainer>
+  </Element>
   );
 }
