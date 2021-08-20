@@ -5,6 +5,9 @@ import { ServicesSection } from "./servicesSection";
 import { FeaturesSection } from "./featuresSection";
 import { ColoredLine } from "../../components/line";
 import { RoadmapSection } from "./roadmapSection";
+import { Footer } from "../../components/footer";
+import { Marginer } from "../../components/marginer";
+
 
 const PageContainer = styled.div`
 width: 100%;
@@ -22,6 +25,7 @@ export function Homepage(props) {
         <FeaturesSection />
         <ColoredLine />
         <RoadmapSection />
+        <Footer />
       </PageContainer>
     );
 }

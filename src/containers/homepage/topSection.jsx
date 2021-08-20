@@ -70,9 +70,6 @@ export function TopSection(props) {
             <Marginer direction="horizontal" margin="8em" />
             <Button flex-direction="row" > &nbsp; Play Now &nbsp; </Button>
           </ButtonContainer>
-          <DownArrowContainer onClick={scrollToNextSection}>
-            <DownArrow />
-          </DownArrowContainer>
       </BackgroundFilter>
     </TopContainer>
   </Element>

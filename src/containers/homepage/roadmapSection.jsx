@@ -4,12 +4,13 @@ import { Element } from "react-scroll";
 import { Marginer } from "../../components/marginer";
 import { SectionTitle } from "../../components/sectionTitle";
 import { Roadmap } from "../../components/roadmap";
+import { MiniLine } from "../../components/miniLine";
 
 import roadmapImg from "../../assets/illustrations/roadmap.jpg";
 
 const RoadmapContainer = styled(Element)`
   width: 100%;
-  min-height: 1400px;
+  min-height: 1100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -20,9 +21,10 @@ const RoadmapContainer = styled(Element)`
 
 export function RoadmapSection(props) {
   return (
-    <RoadmapContainer>
+    <RoadmapContainer name="roadmapSection">
       <SectionTitle> Where we are Headed </SectionTitle>
-      <Marginer direction="vertical" margin="2em" />
+      <MiniLine />
+      <Marginer direction="vertical" margin="4em" />
       <Roadmap
         imgUrl={roadmapImg}
       />

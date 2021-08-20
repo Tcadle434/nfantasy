@@ -4,6 +4,7 @@ import { Element } from "react-scroll";
 import { Marginer } from "../../components/marginer";
 import { SectionTitle } from "../../components/sectionTitle";
 import { OurFeature } from "../../components/ourFeature";
+import { MiniLine } from "../../components/miniLine";
 
 import Feature1Img from "../../assets/illustrations/fsports-cant-use.PNG";
 import Feature2Img from "../../assets/illustrations/green-ticket.png";
@@ -32,6 +33,8 @@ export function FeaturesSection(props) {
 
     <FeaturesContainer name="featuresSection">
     <SectionTitle> Our Features </SectionTitle>
+    <MiniLine />
+    <Marginer direction="vertical" margin="2em" />
       <FeatureContainerRow>
         <Marginer direction="vertical" margin="1em" />
         <OurFeature

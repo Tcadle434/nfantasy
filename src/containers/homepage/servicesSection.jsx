@@ -4,6 +4,7 @@ import { Element } from "react-scroll";
 import { Marginer } from "../../components/marginer";
 import { SectionTitle } from "../../components/sectionTitle";
 import { OurService } from "../../components/ourService";
+import { MiniLine } from "../../components/miniLine";
 
 import Service1Img from "../../assets/illustrations/trophy_field.jpg";
 import Service2Img from "../../assets/illustrations/tatum.PNG";
@@ -35,6 +36,7 @@ export function ServicesSection(props) {
   return (
     <ServicesContainer name="servicesSection">
       <SectionTitle> What is NFanTasy? </SectionTitle>
+      <MiniLine />
       <Marginer direction="vertical" margin="1em" />
       <DescriptionText> Welcome to the most innovative bridge between Fantasy Sports and the world of Crypto. NFanTasy aims to combine these two communities via utility driven NFTs that allow you to create lineups and compete with different Points Boosts. </DescriptionText>
       <Marginer direction="vertical" margin="5em" />

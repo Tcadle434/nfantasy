@@ -4,6 +4,8 @@ import { theme } from "../../theme";
 import { Logo } from "../logo";
 import { Button } from "../button";
 import { Marginer } from "../../components/marginer";
+import { Element, scroller } from "react-scroll";
+
 
 
 const NavbarContainer = styled.div`
@@ -37,17 +39,26 @@ const MetamaskButton = styled(Button)`
 `;
 
 export function Navbar(props) {
+  const scrollToServicesSection= () => {
+    scroller.scrollTo("servicesSection", { smooth: true, duration: 1500 })
+  }
+  const scrollToFeaturesSection= () => {
+    scroller.scrollTo("featuresSection", { smooth: true, duration: 1500 })
+  }
+  const scrollToRoadmapSection= () => {
+    scroller.scrollTo("roadmapSection", { smooth: true, duration: 1500 })
+  }
   return (
     <NavbarContainer>
       <BrandContainer>
         <Logo inline />
       </BrandContainer>
       <AccessibilityContainer>
-        <Button small> &nbsp; Learn &nbsp; </Button>
+        <Button small onClick={scrollToServicesSection}> &nbsp; Learn &nbsp; </Button>
         <Marginer direction="horizontal" margin="16px" />
-        <Button small> Features </Button>
+        <Button small onClick={scrollToFeaturesSection}> Features </Button>
         <Marginer direction="horizontal" margin="16px" />
-        <Button small> Roadmap </Button>
+        <Button small onClick={scrollToRoadmapSection}> Roadmap </Button>
         <Marginer direction="horizontal" margin="16px" />
         <MetamaskButton small> Connect </MetamaskButton>
       </AccessibilityContainer>
